@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import "./login.css";
 import { AuthContext } from "../../Context/AuthContext";
-import { Link, useNavigate, useRoutes } from "react-router-dom";
 
 export const Login = () => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+
   return (
     <div className="container">
       <h1>Login to your account</h1>
@@ -35,7 +34,6 @@ export const Login = () => {
       <button
         onClick={() => {
           login(email, password);
-          navigate("/");
         }}
       >
         Login
